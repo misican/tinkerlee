@@ -1,6 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { Gutters, ThemeVariables } from '../../@types/theme';
-
 /**
  * Generate Styles depending on MetricsSizes vars availabled at ./theme/Variables
  * Styles are like :
@@ -13,57 +11,52 @@ import { Gutters, ThemeVariables } from '../../@types/theme';
  * <op>: can be ['Margin', 'Padding']
  * <value>: is the value of the <size>
  */
-export default function ({ MetricsSizes }: ThemeVariables): Gutters {
-  return StyleSheet.create(
-    Object.entries(MetricsSizes).reduce(
-      (acc, [key, value]) => ({
+export default function ({ MetricsSizes }) {
+    return StyleSheet.create(Object.entries(MetricsSizes).reduce((acc, [key, value]) => ({
         ...acc,
         /* Margins */
         [`${key}Margin`]: {
-          margin: value,
+            margin: value,
         },
         [`${key}BMargin`]: {
-          marginBottom: value,
+            marginBottom: value,
         },
         [`${key}TMargin`]: {
-          marginTop: value,
+            marginTop: value,
         },
         [`${key}RMargin`]: {
-          marginRight: value,
+            marginRight: value,
         },
         [`${key}LMargin`]: {
-          marginLeft: value,
+            marginLeft: value,
         },
         [`${key}VMargin`]: {
-          marginVertical: value,
+            marginVertical: value,
         },
         [`${key}HMargin`]: {
-          marginHorizontal: value,
+            marginHorizontal: value,
         },
         /* Paddings */
         [`${key}Padding`]: {
-          padding: value,
+            padding: value,
         },
         [`${key}BPadding`]: {
-          paddingBottom: value,
+            paddingBottom: value,
         },
         [`${key}TPadding`]: {
-          paddingTop: value,
+            paddingTop: value,
         },
         [`${key}RPadding`]: {
-          paddingRight: value,
+            paddingRight: value,
         },
         [`${key}LPadding`]: {
-          paddingLeft: value,
+            paddingLeft: value,
         },
         [`${key}VPadding`]: {
-          paddingVertical: value,
+            paddingVertical: value,
         },
         [`${key}HPadding`]: {
-          paddingHorizontal: value,
+            paddingHorizontal: value,
         },
-      }),
-      {},
-    ) as Gutters,
-  );
+    }), {}));
 }
